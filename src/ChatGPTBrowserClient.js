@@ -126,7 +126,11 @@ export default class ChatGPTBrowserClient {
                             // get the difference between the current text and the previous text
                             const difference = newMessage.substring(lastMessage.length);
                             lastEvent = data;
-                            onProgress(difference);
+                            onProgress(JSON.stringify({
+                                str:difference,
+                                cid:data.conversation_id,
+                                mid:data.message.id
+                            }));
                         } catch (err) {
                             console.debug(message.data);
                             console.error(err);
