@@ -127,9 +127,9 @@ export default class ChatGPTBrowserClient {
                             const difference = newMessage.substring(lastMessage.length);
                             lastEvent = data;
                             onProgress(JSON.stringify({
-                                str:difference,
-                                cid:data.conversation_id,
-                                mid:data.message.id
+                                string:difference,
+                                conversationId:data.conversation_id,
+                                messageId:data.message.id
                             }));
                         } catch (err) {
                             console.debug(message.data);
